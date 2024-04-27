@@ -10,6 +10,10 @@ env_var_exists() {
   fi
 }
 
+export CUDNN_PATH=$HOME/train/kohya_ss_23.1.3/venv/lib/python3.10/site-packages/nvidia/cudnn
+export LD_LIBRARY_PATH=$CUDNN_PATH/lib:$HOME/TensorRT-8.6.1.6/lib:$LD_LIBRARY_PATH
+export TF_ENABLE_ONEDNN_OPTS=0
+
 # Define the directory path for WSL2
 lib_path="/usr/lib/wsl/lib/"
 
